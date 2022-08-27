@@ -1,0 +1,15 @@
+{
+  "name": "pokemons",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
+    "sequelize": "^6.21.4"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js"
+ }
+}
