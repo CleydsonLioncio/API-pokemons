@@ -24,7 +24,7 @@ module.exports = {
         //deletar
     async delete(req, res) {
         const {nome, peso, tipo} = req.body;
-        const pokemons = await Pokemon.findByPk(6)
+        let pokemons = await Pokemon.findByPk(req.params.id)
         pokemons.destroy ({nome, peso, tipo});
       
         return res.json(pokemons)
