@@ -4,15 +4,16 @@ module.exports = {
         //criar
     async Store(req,res){
         const {nome, peso, tipo} = req.body;
-        const pokemon = await Pokemon.create({nome, peso, tipo});
+        const pokemons = await Pokemon.create({nome, peso, tipo});
+        return res.json(pokemons);
+        },
 
-        return res.json(pokemon);
-    },
        //ler 
     async index(req,res){
         const pokemons = await Pokemon.findAll();
         return res.json(pokemons);
     },
+
        //atualizar
     async update(req, res) {
         const {nome, peso, tipo} = req.body;
@@ -20,6 +21,7 @@ module.exports = {
         pokemon = await pokemon.update({nome, peso, tipo})
         return res.json(pokemon)
     },
+
         //deletar
     async delete(req, res) {
         const {nome, peso, tipo} = req.body;
