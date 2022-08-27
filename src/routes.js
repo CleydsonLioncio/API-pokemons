@@ -13,4 +13,4 @@ routes.put('/pokemons/:id',PokemonController.update);
      //deletar
 routes.delete('/pokemons/:id',PokemonController.delete);
 
-module.exports = routes;
+module.exports = routes

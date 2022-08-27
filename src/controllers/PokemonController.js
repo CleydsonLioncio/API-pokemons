@@ -16,25 +16,15 @@ module.exports = {
        //atualizar
     async update(req, res) {
         const {nome, peso, tipo} = req.body;
-        const pokemon = await Pokemon.findByPk(6)
-        //pokemon = await Pokemon.update({nome, peso, tipo})
-        Pokemon.update({nome, peso, tipo})
+        let pokemon = await Pokemon.findByPk(req.params.id)
+        pokemon = await pokemon.update({nome, peso, tipo})
         return res.json(pokemon)
     },
         //deletar
     async delete(req, res) {
         const {nome, peso, tipo} = req.body;
         let pokemons = await Pokemon.findByPk(req.params.id)
-        pokemons.destroy ({nome, peso, tipo});
-      
+        pokemons = await pokemons.destroy ({nome, peso, tipo});
         return res.json(pokemons)
     }
-
-    // async delete(req, res) {
-    //     const pokemons = await Pokemon.findByPk(7)
-    //     pokemons.destroy ();
-      
-    //     return res.json(pokemons)
-    // }
-   
 };
