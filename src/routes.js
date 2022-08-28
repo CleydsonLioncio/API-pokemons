@@ -5,7 +5,7 @@ const PokemonController = require ('./controllers/PokemonController');
 const routes = express.Router();
 
      //enviar
-routes.post('/pokemons',PokemonController.Store);
+routes.post('/pokemons',PokemonController.create);
      //obter
 routes.get('/pokemons',PokemonController.index);
      //atualizar

@@ -2,7 +2,7 @@ const Pokemon = require('../models/pokemon');
 
 module.exports = {
         //criar
-    async Store(req,res){
+    async create(req,res){
         const {nome, peso, tipo} = req.body;
         const pokemons = await Pokemon.create({nome, peso, tipo});
         return res.json(pokemons);
@@ -24,9 +24,8 @@ module.exports = {
 
         //deletar
     async delete(req, res) {
-        const {nome, peso, tipo} = req.body;
         let pokemons = await Pokemon.findByPk(req.params.id)
-        pokemons = await pokemons.destroy ({nome, peso, tipo});
+        await pokemons.destroy ();
         return res.json(pokemons)
     }
 };
