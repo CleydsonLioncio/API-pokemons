@@ -7,7 +7,7 @@ const routes = express.Router();
      //enviar
 routes.post('/pokemons',PokemonController.create);
      //obter
-routes.get('/pokemons',PokemonController.index);
+routes.get('/pokemons',PokemonController.findAll);
      //atualizar
 routes.put('/pokemons/:id',PokemonController.update);
      //deletar

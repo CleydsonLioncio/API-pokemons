@@ -9,7 +9,7 @@ module.exports = {
         },
 
        //ler 
-    async index(req,res){
+    async findAll(req,res){
         const pokemons = await Pokemon.findAll();
         return res.json(pokemons);
     },
